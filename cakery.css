@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /* removes default padding */
 html,
@@ -7,14 +8,238 @@ body {
     padding: 0;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 5rem;
+    /* Footer height */
+}
+
+a:link {
+    color: #26ab95;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #26ab95;
+    text-decoration: none;
+}
+
+a:active {
+    color: #1d8171;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #32d2b7;
+    text-decoration: underline;
+}
+
 header {
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
     font-optical-sizing: auto;
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
-    background-color: #eee;
-    padding: 30px;
+    background-color: #abe1e8;
+    padding: 24px;
+    margin: 0px;
     text-align: center;
     font-size: 18pt;
-    color: #333;
+    color: #553914;
+}
+
+footer {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    /* Footer height */
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #553914;
+    padding: 24px;
+    margin: 0px;
+    text-align: center;
+    font-size: 18pt;
+    color: white;
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    padding: 24px;
+    margin: 0px;
+    text-align: center;
+    font-size: 24pt;
+    color: #553914;
+}
+
+p {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: justify;
+    font-size: 18pt;
+    line-height: 1.6;
+    color: #553914;
+    margin: 32px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.p-header {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 18pt;
+    color: #553914;
+    margin: 4px;
+}
+
+form {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 18pt;
+    color: #553914;
+    margin: 4px;
+}
+
+input {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 18pt;
+    color: #26ab95;
+    margin: 4px;
+    width: 36rem;    
+    padding: 0.5rem;
+    background-color: #abe1e8;
+    border: 1px solid #1d8171;
+    border-radius: 4px;
+}
+
+textarea {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: left;
+    font-size: 18pt;
+    color: #26ab95;
+    margin: 4px;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #abe1e8;
+    border: 1px solid #1d8171;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    font-family: inherit;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 18pt;
+    color: white;
+    background-color: #cd5ba3;
+    border: 1px solid #abe1e8;
+    margin: 24px;
+    width: 20rem;
+}
+
+input[type="submit"]:active {
+    color: #1d8171;
+}
+
+input[type="submit"]:hover {
+    color: #32d2b7;
+}
+
+.col-labels {
+    float: left;
+    width: 10%;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;  
+    text-align: left !important;
+}
+
+.col-input {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout for mobile */
+@media only screen and (orientation: portrait) {
+    .col-labels, .col-input {
+      width: 95%;
+      margin-top: 0;
+    }
+}
+
+.grid-container {
+    display: grid;
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    text-align: center;
+}
+
+.grid-element {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 14pt;
+    color: #553914;
+}
+
+.img_logo {
+    text-align: center;
+    width: 128px;
+    margin: 0px;
+}
+
+img {
+    text-align: center;
+    width: 124px;
+    margin: 4px;
 }
